@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import WeatherDashboard from "@/pages/weather-dashboard";
 import NotFound from "@/pages/NotFound";
-import Home from "@/pages/Home";
+import City from "@/pages/city";
 import App from "@/App";
 
 const router = createBrowserRouter([
@@ -9,7 +10,8 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <Home /> },
+      { path: "/", element: <WeatherDashboard /> },
+      { path: "/city/:cityName", element: <City /> },
       { path: "*", element: <NotFound /> },
     ],
   },
