@@ -1,9 +1,10 @@
 import { useGeolocation } from "@/hooks/use-geolocation";
-import { RefreshCw } from "lucide-react";
-import { Button } from "../ui/button";
 
 import WeatherErrorAlert from "../modules/WeatherErrorAlert";
+import HourlyTemprature from "../modules/HourlyTemprature";
 import WeatherSkeleton from "../modules/loading-skeleton";
+import CurrentWeather from "../modules/CurrentWeather";
+import FavoriteCities from "../modules/FavoriteCities";
 import LocationAlert from "../modules/LocationAlert";
 
 import {
@@ -11,7 +12,6 @@ import {
   useReverseGeocodeQuery,
   useWeatherQuery,
 } from "@/hooks/use-weather";
-import CurrentWeather from "../modules/CurrentWeather";
 
 const WeatherDashboardPage = () => {
   // =========== Geolocation Hooks ===========
@@ -66,27 +66,19 @@ const WeatherDashboardPage = () => {
   return (
     <div className="space-y-4">
       {/* Favorite Cities */}
-      <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold tracking-tight">My Location</h1>
-        <Button
-          variant={"outline"}
-          size={"icon"}
-          onClick={refreshHandler}
-          disabled={weatherQuery.isFetching || forcastQuery.isFetching}
-        >
-          <RefreshCw
-            className={`h-4 w-4 ${
-              weatherQuery.isFetching ? "animate-spin" : ""
-            }`}
-          />
-        </Button>
-      </div>
+      <FavoriteCities
+        onRefresh={refreshHandler}
+        isLoading={weatherQuery.isFetching || forcastQuery.isFetching}
+      />
       <div className="grid gap-6">
-        <div>
-          <CurrentWeather
-            data={weatherQuery.data}
-            locationName={locationName}
-          />
+        <div className="flex flex-col lg:flex-row gap-4">
+          {weatherQuery.data && (
+            <CurrentWeather
+              data={weatherQuery.data}
+              locationName={locationName}
+            />
+          )}
+          {forcastQuery.data && <HourlyTemprature data={forcastQuery.data} />}
         </div>
       </div>
     </div>

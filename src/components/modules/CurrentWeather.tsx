@@ -1,7 +1,7 @@
-import { Card, CardContent } from "../ui/card";
+import { ArrowDown, ArrowUp, Droplets, Wind } from "lucide-react";
 import { CurrentWeatherProps } from "../../types/module";
+import { Card, CardContent } from "../ui/card";
 import { formatTemp } from "@/utils/formatTemp";
-import { ArrowDown, ArrowUp, Droplet, Droplets, Wind } from "lucide-react";
 
 const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
   // ============= Desctructures ==============
