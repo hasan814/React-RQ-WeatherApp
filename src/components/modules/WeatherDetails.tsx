@@ -1,39 +1,13 @@
-import { Compass, Gauge, Sunrise, Sunset } from "lucide-react";
-import { WeatherDetailsProps } from "@/types/module";
-import { getWindDirection } from "@/utils/getWindDirection";
-import { formatTime } from "@/utils/formatTime";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { WeatherDetailsProps } from "@/types/module";
+import { weatherDetailsData } from "./WeatherDeatilsData";
+
+import WeatherDetailItem from "./WeatherDetailItem";
 
 const WeatherDetails = ({ data }: WeatherDetailsProps) => {
-  // =============== Destructure =============
-  const { sys, main, wind } = data;
+  // =============== Fetch Data =============
+  const detailsLink = weatherDetailsData(data);
 
-  const detailsLink = [
-    {
-      title: "Sunrise",
-      value: formatTime(sys.sunrise),
-      icon: Sunrise,
-      color: "text-orange-500",
-    },
-    {
-      title: "Sunset",
-      value: formatTime(sys.sunset),
-      icon: Sunset,
-      color: "text-blue-500",
-    },
-    {
-      title: "Wind Direction",
-      value: `${getWindDirection(wind.deg)} (${wind.deg} °)`,
-      icon: Compass,
-      color: "text-green-500",
-    },
-    {
-      title: "Pressure",
-      value: `${main.pressure} hPa`,
-      icon: Gauge,
-      color: "text-green-500",
-    },
-  ];
   // =============== Rendering =============
   return (
     <Card>
@@ -43,18 +17,13 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
       <CardContent>
         <div className="grid gap-6 sm:grid-cols-2">
           {detailsLink.map((detail) => (
-            <div
+            <WeatherDetailItem
               key={detail.title}
-              className="flex items-center gap-3 rounded-lg border p-4"
-            >
-              <detail.icon className={`h-5 w-5 ${detail.color}`} />
-              <div>
-                <p className="text-sm font-medium leading-none">
-                  {detail.title}
-                </p>
-                <p className="text-sm text-muted-foreground">{detail.value}</p>
-              </div>
-            </div>
+              title={detail.title}
+              value={detail.value}
+              Icon={detail.Icon}
+              color={detail.color}
+            />
           ))}
         </div>
       </CardContent>

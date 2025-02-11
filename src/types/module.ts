@@ -1,4 +1,5 @@
 import { WeatherData, GeocordingResponse, ForcastData } from './index';
+import { ComponentType, SVGProps } from "react";
 
 export interface LocationAlertProps {
   title: string;
@@ -36,4 +37,12 @@ export interface TooltipProps {
 
 export interface HourlyTemperatureChartProps {
   data: { time: string; temp: number; feels_like: number }[];
+}
+
+
+export interface WeatherDetailItemProps {
+  title: string;
+  value: string;
+  Icon: ComponentType<SVGProps<SVGSVGElement>>;
+  color: string;
 }
