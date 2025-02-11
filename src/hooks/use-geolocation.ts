@@ -53,7 +53,7 @@ export const useGeolocation = () => {
           isLoading: false,
         });
       },
-      { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
     );
   };
 

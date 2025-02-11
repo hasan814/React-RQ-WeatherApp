@@ -14,18 +14,20 @@ class WeatherAPI {
     }
     return response.json()
   }
+
   async getCurrentWeather({ lat, lon }: Coordinates): Promise<WeatherData> {
     const url = this.createUrl(`${API_CONFIG.BASE_URL}/weather`, {
       lat: lat.toString(),
-      lot: lon.toString(),
+      lon: lon.toString(),
       units: API_CONFIG.DEFAULT_PARAMS.units
     })
     return this.fetchData<WeatherData>(url)
   }
+
   async getForeCast({ lat, lon }: Coordinates): Promise<ForcastData> {
-    const url = this.createUrl(`${API_CONFIG.BASE_URL}/forcast`, {
+    const url = this.createUrl(`${API_CONFIG.BASE_URL}/forecast`, {
       lat: lat.toString(),
-      lot: lon.toString(),
+      lon: lon.toString(),
       units: API_CONFIG.DEFAULT_PARAMS.units
     })
     return this.fetchData<ForcastData>(url)
@@ -34,7 +36,7 @@ class WeatherAPI {
   async reverseGeocode({ lat, lon }: Coordinates): Promise<GeocordingResponse[]> {
     const url = this.createUrl(`${API_CONFIG.GEO}/reverse`, {
       lat: lat.toString(),
-      lot: lon.toString(),
+      lon: lon.toString(),
       limit: 1,
     })
     return this.fetchData<GeocordingResponse[]>(url)
