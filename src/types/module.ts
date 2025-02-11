@@ -25,4 +25,15 @@ export interface CurrentWeatherProps {
 export interface HourlyWeatherProps {
   data: ForcastData,
 }
+export interface WeatherDetailsProps {
+  data: WeatherData,
+}
 
+export interface TooltipProps {
+  active?: boolean;
+  payload?: { value: number }[];
+}
+
+export interface HourlyTemperatureChartProps {
+  data: { time: string; temp: number; feels_like: number }[];
+}

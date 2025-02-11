@@ -5,6 +5,7 @@ import HourlyTemprature from "../modules/HourlyTemprature";
 import WeatherSkeleton from "../modules/loading-skeleton";
 import CurrentWeather from "../modules/CurrentWeather";
 import FavoriteCities from "../modules/FavoriteCities";
+import WeatherDetails from "../modules/WeatherDetails";
 import LocationAlert from "../modules/LocationAlert";
 
 import {
@@ -40,6 +41,7 @@ const WeatherDashboardPage = () => {
 
   // =========== Rendering ===========
   if (locationLoading) return <WeatherSkeleton />;
+
   if (locationError)
     return (
       <LocationAlert
@@ -79,6 +81,9 @@ const WeatherDashboardPage = () => {
             />
           )}
           {forcastQuery.data && <HourlyTemprature data={forcastQuery.data} />}
+        </div>
+        <div>
+          {weatherQuery.data && <WeatherDetails data={weatherQuery.data} />}
         </div>
       </div>
     </div>
