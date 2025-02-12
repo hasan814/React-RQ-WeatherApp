@@ -29,6 +29,9 @@ export interface HourlyWeatherProps {
 export interface WeatherDetailsProps {
   data: WeatherData,
 }
+export interface WeatherForcastProps {
+  data: ForcastData,
+}
 
 export interface TooltipProps {
   active?: boolean;
@@ -45,4 +48,18 @@ export interface WeatherDetailItemProps {
   value: string;
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
   color: string;
+}
+
+export interface IDailyForcastTypes {
+  date: number;
+  temp_min: number;
+  temp_max: number;
+  humidity: number;
+  wind: number;
+  weather: {
+    id: number;
+    main: string;
+    description: string;
+    icon: string
+  }
 }

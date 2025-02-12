@@ -13,6 +13,7 @@ import {
   useReverseGeocodeQuery,
   useWeatherQuery,
 } from "@/hooks/use-weather";
+import WeatherForcast from "../modules/WeatherForcast";
 
 const WeatherDashboardPage = () => {
   // =========== Geolocation Hooks ===========
@@ -82,8 +83,9 @@ const WeatherDashboardPage = () => {
           )}
           {forcastQuery.data && <HourlyTemprature data={forcastQuery.data} />}
         </div>
-        <div>
+        <div className="grid gap-6 md:grid-cols-2 items-start">
           {weatherQuery.data && <WeatherDetails data={weatherQuery.data} />}
+          {forcastQuery.data && <WeatherForcast data={forcastQuery.data} />}
         </div>
       </div>
     </div>
