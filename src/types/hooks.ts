@@ -5,3 +5,14 @@ export interface GeolocationState {
   error: string | null;
   isLoading: boolean;
 }
+
+export interface ISearchHoistoryProps {
+  id: string;
+  lat: number;
+  lon: number;
+  name: string;
+  query: string;
+  state?: string;
+  country: string;
+  searchAt: number
+}
