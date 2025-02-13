@@ -2,6 +2,8 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/context/theme-provider";
 import { Link } from "react-router-dom";
 
+import SearchCity from "../modules/SearchCity";
+
 const Header = () => {
   // ============== Context ============
   const { theme, setTheme } = useTheme();
@@ -18,17 +20,21 @@ const Header = () => {
             className="h-14"
           />
         </Link>
-        <div
-          className={`flex items-center cursor-pointer transition-transform duration-500 ${
-            isDark ? "rotate-180" : "rotate-0"
-          }`}
-          onClick={() => setTheme(isDark ? "light" : "dark")}
-        >
-          {isDark ? (
-            <Sun className="h-6 w-6 text-yellow-500 rotate-0 transition-all" />
-          ) : (
-            <Moon className="h-6 w-6 text-blue-500 rotate-0 transition-all" />
-          )}
+        <div className="flex gap-4">
+          {/* Search */}
+          <SearchCity />
+          <div
+            className={`flex items-center cursor-pointer transition-transform duration-500 ${
+              isDark ? "rotate-180" : "rotate-0"
+            }`}
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+          >
+            {isDark ? (
+              <Sun className="h-6 w-6 text-yellow-500 rotate-0 transition-all" />
+            ) : (
+              <Moon className="h-6 w-6 text-blue-500 rotate-0 transition-all" />
+            )}
+          </div>
         </div>
       </div>
     </header>
