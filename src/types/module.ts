@@ -63,3 +63,36 @@ export interface IDailyForcastTypes {
     icon: string
   }
 }
+
+export interface ILocation {
+  lat: number;
+  lon: number;
+  name: string;
+  state?: string;
+  country: string;
+  searchAt: string | Date;
+}
+
+export interface ISearchHistoryProps {
+  history: ILocation[];
+  clearHistory: { mutate: () => void };
+  selectHandler: (cityData: string) => void;
+}
+
+export interface ISuggestionsProps {
+  locations: ILocation[];
+  isLoading: boolean;
+  selectHandler: (cityData: string) => void;
+}
+
+export interface ISearchDialogProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  query: string;
+  setQuery: (query: string) => void;
+  locations: ILocation[];
+  isLoading: boolean;
+  history: ILocation[];
+  clearHistory: { mutate: () => void };
+  selectHandler: (cityData: string) => void;
+}

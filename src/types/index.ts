@@ -51,10 +51,10 @@ export interface ForcastData {
 }
 
 export interface GeocordingResponse {
-  name: string;
-  local_names?: Record<string, string>;
   lat: number;
   lon: number;
+  name: string;
+  state?: string;
   country: string;
-  state?: string
+  searchAt: string | Date;
 }

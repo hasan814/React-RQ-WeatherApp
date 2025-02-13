@@ -2,7 +2,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/context/theme-provider";
 import { Link } from "react-router-dom";
 
-import SearchCity from "../modules/SearchCity";
+import SearchCity from "../modules/Search/SearchCity";
 
 const Header = () => {
   // ============== Context ============
