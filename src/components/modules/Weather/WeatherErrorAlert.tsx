@@ -1,9 +1,8 @@
-// WeatherErrorAlert.tsx
-import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { WeatherErrorAlertProps } from "@/types/module";
 import { AlertTriangle } from "lucide-react";
 import { RefreshCw } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 const WeatherErrorAlert = ({ onRetry }: WeatherErrorAlertProps) => (
   <Alert variant={"destructive"}>

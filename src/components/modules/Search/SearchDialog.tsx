@@ -1,5 +1,5 @@
 import { ISearchDialogProps } from "@/types/module";
-import { FavoritesGroup } from "./FavoritesGroup";
+import { FavoritesGroup } from "../Favorite/FavoritesGroup";
 import { SearchHistory } from "./SearchHistory";
 import { Suggestions } from "./Suggestions";
 

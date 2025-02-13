@@ -1,18 +1,18 @@
 import { useParams, useSearchParams } from "react-router-dom";
 
 import HourlyTemperature from "../modules/HourlyTemprature";
-import WeatherErrorAlert from "../modules/WeatherErrorAlert";
+import WeatherErrorAlert from "../modules/Weather/WeatherErrorAlert";
 import WeatherSkeleton from "../modules/loading-skeleton";
-import WeatherForecast from "../modules/WeatherForcast";
+import WeatherForecast from "../modules/Weather/WeatherForcast";
 import CurrentWeather from "../modules/CurrentWeather";
-import WeatherDetails from "../modules/WeatherDetails";
+import WeatherDetails from "../modules/Weather/WeatherDetails";
+import FavoriteBtn from "../modules/Favorite/FavoriteBtn";
 
 import {
   useForcastQuery,
   useReverseGeocodeQuery,
   useWeatherQuery,
 } from "@/hooks/use-weather";
-import FavoriteBtn from "../modules/FavoriteBtn";
 
 const CityPage = () => {
   // ============ Params =============

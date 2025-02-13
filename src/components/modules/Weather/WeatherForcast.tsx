@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { processDailyForecast } from "@/utils/processDailyForecast";
 import { WeatherForcastProps } from "@/types/module";
 

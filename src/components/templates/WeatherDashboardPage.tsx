@@ -1,13 +1,14 @@
 import { useGeolocation } from "@/hooks/use-geolocation";
 
-import WeatherErrorAlert from "../modules/WeatherErrorAlert";
+import WeatherErrorAlert from "../modules/Weather/WeatherErrorAlert";
 import HourlyTemprature from "../modules/HourlyTemprature";
 import WeatherSkeleton from "../modules/loading-skeleton";
+import WeatherForecast from "../modules/Weather/WeatherForcast";
+import FavoriteCities from "../modules/Favorite/FavoriteCities";
 import CurrentWeather from "../modules/CurrentWeather";
-import FavoriteCities from "../modules/FavoriteCities";
-import WeatherDetails from "../modules/WeatherDetails";
-import WeatherForcast from "../modules/WeatherForcast";
+import WeatherDetails from "../modules/Weather/WeatherDetails";
 import LocationAlert from "../modules/LocationAlert";
+import Favorites from "../modules/Favorite/Favorites";
 
 import {
   useForcastQuery,
@@ -69,6 +70,7 @@ const WeatherDashboardPage = () => {
   return (
     <div className="space-y-4">
       {/* Favorite Cities */}
+      <Favorites />
       <FavoriteCities
         onRefresh={refreshHandler}
         isLoading={weatherQuery.isFetching || forcastQuery.isFetching}
@@ -85,7 +87,7 @@ const WeatherDashboardPage = () => {
         </div>
         <div className="grid gap-6 md:grid-cols-2 items-start">
           {weatherQuery.data && <WeatherDetails data={weatherQuery.data} />}
-          {forcastQuery.data && <WeatherForcast data={forcastQuery.data} />}
+          {forcastQuery.data && <WeatherForecast data={forcastQuery.data} />}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 // FavoriteCities.tsx
 import { FavoriteCitiesProps } from "@/types/module";
 import { RefreshCw } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 const FavoriteCities = ({ onRefresh, isLoading }: FavoriteCitiesProps) => {
   return (

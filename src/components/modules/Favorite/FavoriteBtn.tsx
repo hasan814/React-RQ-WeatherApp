@@ -1,6 +1,6 @@
 import { IFavoriteBtnProps } from "@/types/module";
 import { useFavorite } from "@/hooks/use-favorite";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Star } from "lucide-react";
 

@@ -101,3 +101,11 @@ export interface ISearchDialogProps {
 export interface IFavoriteBtnProps {
   data: WeatherData
 }
+
+export interface IFavoriteTabletProps {
+  id: string;
+  lat: number;
+  lon: number;
+  name: string;
+  onRemove: (id: string) => void
+}
