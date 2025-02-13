@@ -8,7 +8,7 @@ export interface LocationAlertProps {
 }
 
 export interface WeatherErrorAlertProps {
-  onRetry: () => void;
+  onRetry?: () => void;
 }
 
 export interface LocationButtonProps {

@@ -6,6 +6,7 @@ import WeatherSkeleton from "../modules/loading-skeleton";
 import CurrentWeather from "../modules/CurrentWeather";
 import FavoriteCities from "../modules/FavoriteCities";
 import WeatherDetails from "../modules/WeatherDetails";
+import WeatherForcast from "../modules/WeatherForcast";
 import LocationAlert from "../modules/LocationAlert";
 
 import {
@@ -13,14 +14,13 @@ import {
   useReverseGeocodeQuery,
   useWeatherQuery,
 } from "@/hooks/use-weather";
-import WeatherForcast from "../modules/WeatherForcast";
 
 const WeatherDashboardPage = () => {
   // =========== Geolocation Hooks ===========
   const {
     coordinates,
-    error: locationError,
     getLocation,
+    error: locationError,
     isLoading: locationLoading,
   } = useGeolocation();
 

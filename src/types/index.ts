@@ -53,8 +53,8 @@ export interface ForcastData {
 export interface GeocordingResponse {
   lat: number;
   lon: number;
-  name: string;
   state?: string;
   country: string;
   searchAt: string | Date;
+  name?: string;
 }

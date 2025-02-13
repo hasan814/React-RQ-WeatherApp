@@ -11,7 +11,6 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
     wind: { speed },
   } = data;
 
-  console.log(currentWeather.icon);
   // ============= Rendering ==============
   return (
     <Card className="overflow-hidden">
