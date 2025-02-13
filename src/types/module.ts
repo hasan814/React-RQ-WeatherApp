@@ -96,3 +96,8 @@ export interface ISearchDialogProps {
   clearHistory: { mutate: () => void };
   selectHandler: (cityData: string) => void;
 }
+
+
+export interface IFavoriteBtnProps {
+  data: WeatherData
+}

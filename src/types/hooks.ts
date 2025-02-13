@@ -16,3 +16,13 @@ export interface ISearchHoistoryProps {
   country: string;
   searchAt: number
 }
+
+export interface IFavoriteItemProps {
+  id: string;
+  lat: number;
+  lon: number;
+  name: string;
+  state?: string;
+  country: string;
+  AddedAt: number;
+}

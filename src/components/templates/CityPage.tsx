@@ -12,6 +12,7 @@ import {
   useReverseGeocodeQuery,
   useWeatherQuery,
 } from "@/hooks/use-weather";
+import FavoriteBtn from "../modules/FavoriteBtn";
 
 const CityPage = () => {
   // ============ Params =============
@@ -44,7 +45,10 @@ const CityPage = () => {
         <h1 className="text-3xl font-bold tracking-tight">
           {name}, {country}
         </h1>
-        <div>{/* Favorites Btn */}</div>
+        <div>
+          {/* Favorites Btn */}
+          <FavoriteBtn data={{ ...weatherQuery.data, name: params.cityName }} />
+        </div>
       </div>
       <div className="grid gap-6">
         <div className="flex flex-col lg:flex-row gap-4">

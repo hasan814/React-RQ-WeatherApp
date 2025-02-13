@@ -1,6 +1,6 @@
-import { useMutation } from "@tanstack/react-query";
 import { ISearchHoistoryProps } from "@/types/hooks";
 import { useLocalStorage } from "./use-local-storage";
+import { useMutation } from "@tanstack/react-query";
 
 export const useSearchHistory = () => {
   const [history, setHistory] = useLocalStorage<ISearchHoistoryProps[]>("search-history", []);
