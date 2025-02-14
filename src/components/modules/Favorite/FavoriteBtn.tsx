@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { Star } from "lucide-react";
 
 const FavoriteBtn = ({ data }: IFavoriteBtnProps) => {
+  console.log(data);
   // ============== Custom Hook ==============
   const { addFavorite, removeFavorite, isFavorite } = useFavorite();
   const isCurrentlyFavorite = isFavorite(data.coord.lat, data.coord.lon);

@@ -47,7 +47,11 @@ const CityPage = () => {
         </h1>
         <div>
           {/* Favorites Btn */}
-          <FavoriteBtn data={{ ...weatherQuery.data, name: params.cityName }} />
+          {weatherQuery.data && (
+            <FavoriteBtn
+              data={{ ...weatherQuery.data, name: params.cityName }}
+            />
+          )}
         </div>
       </div>
       <div className="grid gap-6">

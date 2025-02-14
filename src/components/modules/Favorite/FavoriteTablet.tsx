@@ -71,10 +71,11 @@ const FavoriteTablet = ({
         <>
           <div className="flex items-center gap-2">
             <img
-              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-              alt={weather.weather[0].description}
+              src={`https://openweathermap.org/img/wn/${weather?.weather?.[0]?.icon}.png`}
+              alt={weather?.weather?.[0]?.description ?? "Weather icon"}
               className="h-8 w-8"
             />
+
             <div>
               <p className="font-medium">{name}</p>
               <p className="text-xs text-muted-foreground">
@@ -87,7 +88,7 @@ const FavoriteTablet = ({
               {Math.round(weather.main.temp)} °
             </p>
             <p className="text-xs capitalize text-muted-foreground">
-              {weather.weather[0].description}
+              {weather?.weather?.[0]?.description ?? "No description"}
             </p>
           </div>
         </>

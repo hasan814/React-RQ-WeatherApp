@@ -67,7 +67,7 @@ export interface IDailyForcastTypes {
 export interface ILocation {
   lat: number;
   lon: number;
-  name: string;
+  name?: string;
   state?: string;
   country: string;
   searchAt: string | Date;

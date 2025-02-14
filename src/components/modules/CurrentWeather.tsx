@@ -6,10 +6,12 @@ import { formatTemp } from "@/utils/formatTemp";
 const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
   // ============= Desctructures ==============
   const {
-    weather: [currentWeather],
+    weather = [],
     main: { temp, feels_like, temp_min, temp_max, humidity },
     wind: { speed },
   } = data;
+
+  const currentWeather = weather[0] ?? { icon: "", description: "No data" };
 
   // ============= Rendering ==============
   return (
