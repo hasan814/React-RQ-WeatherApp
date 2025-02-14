@@ -1,5 +1,6 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { useFavorite } from "@/hooks/use-favorite";
+import { ScrollArea } from "@/components/ui/scroll-area";
+
 import FavoriteTablet from "./FavoriteTablet";
 
 const Favorites = () => {

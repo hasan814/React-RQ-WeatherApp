@@ -109,3 +109,42 @@ export interface IFavoriteTabletProps {
   name: string;
   onRemove: (id: string) => void
 }
+
+export interface RemoveButtonProps {
+  id: string;
+  name: string;
+  onRemove: (id: string) => void;
+}
+
+export interface WeatherInfoProps {
+  weather: WeatherData;
+  name: string;
+}
+
+
+export interface WeatherLocationProps {
+  locationName?: {
+    name?: string;
+    state?: string;
+    country?: string;
+  };
+}
+
+export interface TemperatureInfoProps {
+  temp: number;
+  feels_like: number;
+  temp_min: number;
+  temp_max: number;
+}
+
+
+export interface WeatherDetailsLocationProps {
+  humidity: number;
+  windSpeed: number;
+}
+
+
+export interface WeatherIconProps {
+  icon: string;
+  description: string;
+}
